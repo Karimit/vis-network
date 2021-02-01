@@ -6,6 +6,7 @@ import { terser } from "rollup-plugin-terser";
 import { generateHeader } from "vis-dev-utils";
 import assets from "postcss-assets";
 import postcss from "rollup-plugin-postcss";
+import browsersync from 'rollup-plugin-browsersync'
 
 // TypeScript because Babel transpiles modules in isolation, therefore no type reexports.
 // CommonJS because Babel is not 100 % ESM.
@@ -60,6 +61,11 @@ const plugins = {
 
 export default [
   {
+    watch: {
+      chokidar: {
+          usePolling: true
+      }
+    },
     input: "lib/index-legacy-bundle.ts",
     output: [
       {
@@ -115,3 +121,17 @@ export default [
     ],
   },
 ];
+
+// Only add the browsersync plugin if we are in development
+if (process.env.DEVELOPMENT) {
+  plugins.push(browsersync({
+    host: 'localhost',
+    watch: true,
+    port: 3000,
+    notify: false,
+    open: true,
+    input: "lib/index-legacy-bundle.ts",
+    output: "dist/vis-network.js",
+    server: 'dist'
+  }));
+}

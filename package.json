@@ -42,6 +42,7 @@
     "url": "https://opencollective.com/visjs"
   },
   "scripts": {
+    "dev": "browser-sync start --server",
     "serve": "serve -l tcp://localhost:58253",
     "test": "npm run test:unit && npm run test:e2e:functional && npm run test:e2e:visual",
     "test:e2e:functional": "cross-env CYPRESS_FUNCTIONAL=true npm run test:e2e:headless",
@@ -111,6 +112,7 @@
     "@semantic-release/github": "7.2.0",
     "@semantic-release/npm": "7.0.9",
     "@semantic-release/release-notes-generator": "9.0.1",
+    "rollup-plugin-browsersync": "1.3.1",
     "@types/chai": "4.2.14",
     "@types/mocha": "8.2.0",
     "@types/sinon": "9.0.9",
