@@ -42,8 +42,9 @@
     "url": "https://opencollective.com/visjs"
   },
   "scripts": {
-    "dev": "browser-sync start --server",
     "serve": "serve -l tcp://localhost:58253",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel watch serve",
     "test": "npm run test:unit && npm run test:e2e:functional && npm run test:e2e:visual",
     "test:e2e:functional": "cross-env CYPRESS_FUNCTIONAL=true npm run test:e2e:headless",
     "test:e2e:gui": "start-server-and-test test:e2e:transpile-watch-and-serve :58253 \"cypress open\"",
@@ -106,6 +107,7 @@
     "vis-util": "^3.0.0 || ^4.0.0"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "@egjs/hammerjs": "2.0.17",
     "@mdi/font": "5.8.55",
     "@semantic-release/commit-analyzer": "8.0.1",
