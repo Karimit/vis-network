@@ -942,6 +942,8 @@ export interface NodeOptions {
     left?: number;
   };
 
+  innerMargin?: number,
+
   mass?: number;
 
   physics?: boolean;
