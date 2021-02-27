@@ -943,6 +943,7 @@ export interface NodeOptions {
   };
 
   innerMargin?: number,
+  selectedWidthDelta?: number,
 
   mass?: number;
 
