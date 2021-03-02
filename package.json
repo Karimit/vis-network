@@ -1,6 +1,6 @@
 {
   "name": "@future-demand/vis-network",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A dynamic, browser-based visualization library.",
   "homepage": "https://visjs.github.io/vis-network/",
   "license": "(Apache-2.0 OR MIT)",
@@ -42,7 +42,7 @@
     "url": "https://opencollective.com/visjs"
   },
   "scripts": {
-    "serve": "serve -l tcp://localhost:58253",
+    "serve": "serve -l tcp://localhost:8081",
     "watch": "rollup -c -w",
     "dev": "npm-run-all --parallel watch serve",
     "test": "npm run test:unit && npm run test:e2e:functional && npm run test:e2e:visual",
