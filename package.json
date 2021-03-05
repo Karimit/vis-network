@@ -1,6 +1,6 @@
 {
   "name": "@future-demand/vis-network",
-  "version": "0.0.9",
+  "version": "0.0.14",
   "description": "A dynamic, browser-based visualization library.",
   "homepage": "https://visjs.github.io/vis-network/",
   "license": "(Apache-2.0 OR MIT)",
